@@ -32,7 +32,7 @@ class Mexico(QtGui.QWidget):
 
 	#calcula el numero de dias para el 1 de septiembre del anio siguiente
     def calcula(self):
-        if int(dia) <=15 and int(mes)<=9: #si aun no es 15 de septiembre en el anio actual
+        if dia <=15 and mes<=9 or mes <9: #si aun no es 15 de septiembre en el anio actual
             faltan= datetime.date(anio, 9,15)- datetime.date.today()#usamos el date time en una resta, el dia de la independencia con el actual
             
             self.btn.setText("Faltan "+str(faltan.days)+" días para el 15 de septiembre del "+str(anio)+".")#usamos .days para obtener solo el dia
@@ -57,6 +57,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+	main()
 
 
